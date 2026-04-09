@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-mark">✦</div>
+        <div>
+          <h1 class="app-title">TaskFlow</h1>
+          <p class="app-sub">Stay focused. Get it done.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-pill">
+          <span id="total-count">0</span>
+          <span class="stat-text">Total</span>
+        </div>
+        <div class="stat-pill done-pill">
+          <span id="done-count">0</span>
+          <span class="stat-text">Done</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress bar -->
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label" id="progress-label">0% complete</span>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-card">
+      <div class="input-row">
+        <span class="input-icon">✏️</span>
+        <input
+          type="text"
+          id="task-input"
+          class="task-input"
+          placeholder="What needs to be done?"
+          maxlength="120"
+          autocomplete="off"
+        />
+        <select id="priority-select" class="priority-select">
+          <option value="low">🟢 Low</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <button id="add-btn" class="add-btn">
+          <span>Add</span>
+          <span class="add-icon">+</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="active">Active</button>
+      <button class="tab" data-filter="completed">Completed</button>
+      <button class="tab tab-clear" id="clear-completed-btn">🗑 Clear Done</button>
+    </div>
+
+    <!-- Task list -->
+    <ul class="task-list" id="task-list">
+      <!-- Tasks injected by JS -->
+    </ul>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="empty-state">
+      <div class="empty-icon">🎯</div>
+      <p class="empty-title">All clear!</p>
+      <p class="empty-sub">Add a task above to get started.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>TaskFlow · Built with HTML, CSS &amp; JavaScript</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
